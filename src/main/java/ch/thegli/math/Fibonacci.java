@@ -6,24 +6,20 @@ import java.text.NumberFormat;
 import java.util.Locale;
 
 /**
- * Fibonacci sequence: </br>
- * F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2)
- *
- * How to compile and run: <code>
- *  javac @arguments
- * </code> where content of file 'arguments' is: <code>
- *  -d bin
- *  src/Fibonacci.java
- * </code>
+ * Formula for Fibonacci sequence: </br>
+ * <code>F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2)</code>
  * 
- * java -cp bin ch.thegli.math.Fibonacci 20
- * 
- * Resulting output: <code>
- *  0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1'597 2'584 4'181 
+ * Output for index 20:</br>
+ * <code>
+ *  0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1'597 2'584 4'181 6'765
  *  Fibonacci number at index 20 is 6'765
  * </code>
  * 
+ * Optional second argument <code>-a</code> also prints the complete sequence in
+ * a row.
+ * 
  * @author Thomas Egli
+ * @version 0.2.1
  */
 public class Fibonacci {
   private DecimalFormat formatter = null;
@@ -112,7 +108,7 @@ public class Fibonacci {
     }
 
     if (doOutputSequence) {
-      sequence.append(fib);
+      sequence.append(formatter.format(fib));
       System.out.println(sequence);
     }
 
