@@ -2,12 +2,33 @@
 .gradle
 
 # Ignore Gradle build output directory
-build
+build/
 
-# gets downloaded
-gradle
+# Eclipse
+.project
+.classpath
+.settings/
+bin/
 
-# generated
-bin
-*.class
-*.jar
+# IntelliJ
+.idea
+*.ipr
+*.iml
+*.iws
+
+# NetBeans
+nb-configuration.xml
+
+# Visual Studio Code
+.vscode
+
+# OSX
+.DS_Store
+
+# Vim
+*.swp
+*.swo
+
+# patch
+*.orig
+*.rej
