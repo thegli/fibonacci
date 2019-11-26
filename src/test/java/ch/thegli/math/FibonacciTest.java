@@ -11,14 +11,14 @@ public class FibonacciTest {
     public void prepare() {
         testSubject = new Fibonacci();
     }
-    
+
     @Test
     public void calc10() {
         Assert.assertEquals(55, testSubject.calculate(10));
     }
 
     @Test
-    public void calcMin () {
+    public void calcMin() {
         Assert.assertEquals(0, testSubject.calculate(0));
     }
 
