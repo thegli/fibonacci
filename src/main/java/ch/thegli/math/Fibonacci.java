@@ -19,7 +19,7 @@ import java.util.Locale;
  * a row.
  * 
  * @author Thomas Egli
- * @version 0.2.1
+ * @version 0.2.2
  */
 public class Fibonacci {
   private DecimalFormat formatter = null;
@@ -56,6 +56,7 @@ public class Fibonacci {
       final long fibonacciNumber = calculate(index, doOutputSequence);
       System.out.println("Fibonacci number at index " + index + " is " + formatter.format(fibonacciNumber));
     } catch (IllegalArgumentException iae) {
+    	System.err.println(iae.getMessage());
       rc = 2;
     }
 
