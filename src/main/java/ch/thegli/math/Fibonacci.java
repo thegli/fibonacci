@@ -1,5 +1,6 @@
 package ch.thegli.math;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
@@ -115,4 +116,31 @@ public class Fibonacci {
 
     return fib;
   }
+  
+  protected BigDecimal calculateBig(final int index) {
+	  return calculateBig(index, false);
+  }
+  
+  protected BigDecimal calculateBig(final int index, final boolean doOutputSequence) {
+	  BigDecimal f1 = BigDecimal.ZERO;
+	  BigDecimal f2 = BigDecimal.ONE;
+	  BigDecimal fib = BigDecimal.ZERO;
+	  
+	    StringBuilder sequence = new StringBuilder();
+	    for (int i = 1; i <= index; i++) {
+	      sequence.append(formatter.format(fib));
+	      sequence.append(" ");
+	      f1 = f2;
+	      f2 = fib;
+	      fib = f1.add(f2);
+	    }
+
+	    if (doOutputSequence) {
+	      sequence.append(formatter.format(fib));
+	      System.out.println(sequence);
+	    }
+
+	    return fib;
+  }
+  
 }
